@@ -28,11 +28,13 @@ ARCHIVE_NAME="${APP_NAME}_${DATE}.xcarchive"
 IPANAME="${APP_NAME}_${DATE}_IPA"
 
 # 工程根目录#工程源码目录(这里的${WORKSPACE}是jenkins的内置变量表示(jenkins job的路径):/Users/plz/.jenkins/workspace/TestDome/)
-# ${WORKSPACE}/TestDome/ 中的TestDome根据你的项目自行修改
-CODE_PATH="${WORKSPACE}"
+#${WORKSPACE}/iOSNativeApp/ #中的TestDome根据你的项目自行修改
+#CODE_PATH="${WORKSPACE}"
+CODE_PATH=$(pwd)
+echo "CODE_PATH: ${CODE_PATH}"
 
 # 要上传的ipa文件路径 ${username} 需要换成自己的用户名
-ROOT_PATH="/Users/${username}/Desktop/Jenkins"
+ROOT_PATH="/Users/bu184564/Desktop/Jenkins"
 ARCHIVE_PATH="${ROOT_PATH}/Archive/${ARCHIVE_NAME}"
 IPA_PATH="${ROOT_PATH}/Export/${IPANAME}"
 echo "ARCHIVE_PATH: ${ARCHIVE_PATH}"
@@ -43,13 +45,13 @@ echo "IPA_PATH:\n${IPA_PATH}">> export_history.txt
 EXPORT_METHOD="AdHoc"
 # 导包方式配置文件路径(这里需要手动创建对应的XXXExportOptionsPlist.plist文件，并将文件复制到根目录下[我这里在源项目的根目录下又新建了ExportPlist文件夹专门放ExportPlist文件])
 if test "$EXPORT_METHOD" = "AdHoc"; then
-    EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportOptions/AdHocExportOptions.plist
+    EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/exportHocOptions.plist
 elif test "$EXPORT_METHOD" = "AppStore"; then
     EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportOptions/AppStoreExportOptios.plist
 elif test "$EXPORT_METHOD" = "Enterprise"; then
     EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportOptions/EnterpriseExportOptions.plist
 else
-    EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportOptions/DevelopmentExportOptions.plist
+    EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportOptions/exportDevOptions.plist
 fi
 
 # 指ipa定输出文件夹,如果有删除后再创建，如果没有就直接创建
@@ -75,7 +77,7 @@ xcodebuild clean -workspace ${APP_NAME}.xcworkspace -scheme ${APP_NAME} -configu
 
 # 将app打包成xcarchive格式文件
 echo "+++++++++++++++++archive+++++++++++++++++"
-xcodebuild archive -workspace ${APP_NAME}.xcworkspace -scheme ${APP_NAME} -configuration ${configuration} -archivePath ${ARCHIVE_PATH}
+xcodebuild archive -workspace ${APP_NAME}.xcworkspace -scheme ${APP_NAME} -configuration ${configuration} -archivePath ${ARCHIVE_PATH} -destination generic/platform=iOS
 
 # 将xcarchive格式文件打包成ipa
 echo "+++++++++++++++++ipa+++++++++++++++++"

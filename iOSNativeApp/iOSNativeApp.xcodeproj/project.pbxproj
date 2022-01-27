@@ -101,7 +101,6 @@
 				E4974F5022708E38542B97FB /* Pods-iOSNativeApp.debug.xcconfig */,
 				B978467D3CB98A554B196E53 /* Pods-iOSNativeApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
