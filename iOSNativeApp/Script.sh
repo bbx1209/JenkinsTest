@@ -28,10 +28,10 @@ ARCHIVE_NAME="${APP_NAME}_${DATE}.xcarchive"
 IPANAME="${APP_NAME}_${DATE}_IPA"
 
 # 工程根目录#工程源码目录(这里的${WORKSPACE}是jenkins的内置变量表示(jenkins job的路径):/Users/plz/.jenkins/workspace/TestDome/)
-#${WORKSPACE}/iOSNativeApp/ #中的TestDome根据你的项目自行修改
-#CODE_PATH="${WORKSPACE}"
-CODE_PATH=$(pwd)
-echo "CODE_PATH: ${CODE_PATH}"
+${WORKSPACE}/iOSNativeApp/ #中的TestDome根据你的项目自行修改
+CODE_PATH="${WORKSPACE}"
+
+#CODE_PATH=$(pwd)
 
 # 要上传的ipa文件路径 ${username} 需要换成自己的用户名
 ROOT_PATH="/Users/bu184564/Desktop/Jenkins"
