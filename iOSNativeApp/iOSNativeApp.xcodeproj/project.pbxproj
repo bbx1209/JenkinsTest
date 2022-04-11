@@ -32,9 +32,7 @@
 		8294A98E27A0F980005CE724 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8294A99527A13AD5005CE724 /* iOSNativeAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSNativeAppDebug.entitlements; sourceTree = "<group>"; };
 		82E0821727A241D50045A20D /* iOSNativeAppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSNativeAppRelease.entitlements; sourceTree = "<group>"; };
-		B978467D3CB98A554B196E53 /* Pods-iOSNativeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNativeApp.release.xcconfig"; path = "Target Support Files/Pods-iOSNativeApp/Pods-iOSNativeApp.release.xcconfig"; sourceTree = "<group>"; };
 		D36BFC0217FC1E8E4D579DC1 /* Pods_iOSNativeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSNativeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4974F5022708E38542B97FB /* Pods-iOSNativeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNativeApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSNativeApp/Pods-iOSNativeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +52,6 @@
 			children = (
 				8294A97B27A0F97E005CE724 /* iOSNativeApp */,
 				8294A97A27A0F97E005CE724 /* Products */,
-				B4D3D202C066209866015A5D /* Pods */,
 				8A857D7CAFE8C2177F3297D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -93,15 +90,6 @@
 				D36BFC0217FC1E8E4D579DC1 /* Pods_iOSNativeApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B4D3D202C066209866015A5D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E4974F5022708E38542B97FB /* Pods-iOSNativeApp.debug.xcconfig */,
-				B978467D3CB98A554B196E53 /* Pods-iOSNativeApp.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +349,6 @@
 		};
 		8294A99327A0F980005CE724 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4974F5022708E38542B97FB /* Pods-iOSNativeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,7 +379,6 @@
 		};
 		8294A99427A0F980005CE724 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B978467D3CB98A554B196E53 /* Pods-iOSNativeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
